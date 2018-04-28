@@ -1,0 +1,7 @@
+
+html,body{height: 100%;}
+#box{height: 100%;display:flex;flex-direction:column;}
+#box .erzu-header{background:red;height:0.72rem;}
+#box .erzu-main{flex:1;overflow-x: hidden;overflow-y: auto;}
+#box .erzu-body{height:0.72rem;}
+
