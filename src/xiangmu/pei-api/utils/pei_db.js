@@ -49,9 +49,9 @@ module.exports = {
      * @param  {[type]}  _condition  [条件]
      * @return {Promise}             [description]
      */
-    async delete(_collection,_condition){
+    async deleteOne(_collection,_condition){
       try{
-        let item = await db.collection(_collection).deleteOne(_condition);
+        let item = await db.collection(_collection).remove(_condition);
         return item;
       }catch(err){
         console.error(err);

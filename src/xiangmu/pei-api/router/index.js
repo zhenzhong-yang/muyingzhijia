@@ -20,8 +20,13 @@ app.all('*', function(req, res, next) {
 
 const getclassdata = require('./class')
 const makedatatodb = require('./makedatatodb.js')
+const todaySpec = require('./todaySpecial.js')
+const deletedata = require('./deletedata.js');
+
 module.exports = {
   start(_port){
+    deletedata.reg(app);
+    todaySpec.reg(app);
     getclassdata.reg(app);
     makedatatodb.reg(app);
     app.listen(_port);
