@@ -7,6 +7,7 @@
         <div>
             <p class="iconfont icon-leimupinleifenleileibie"></p>
             <span>分类</span>
+            <router-link to="/fenlei">fenlei</router-link>
         </div>
         <div>
             <p class="iconfont icon-gouwuche"></p>

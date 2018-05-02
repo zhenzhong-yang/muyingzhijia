@@ -16,7 +16,7 @@
     "mongodb": "^3.0.7",
     "node-sass": "^4.9.0",
     "request": "^2.85.0",
-    "vue": "^2.5.11",
+    "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
   "browserslist": [

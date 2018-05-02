@@ -1,0 +1,11 @@
+.mian2{height: 385px;background:#F3F3F3;padding-top:20px;}
+.mian2 h2{height: 150px;width: 540px;}
+.mian2 h2 img{height: 150px;width: 100%;}
+.mian2 ul{display:flex;flex-direction:row;justify-content: space-between;}
+.mian2 ul li{width: 180px;height: 133px;}
+.mian2 ul li img{width: 180px;height: 133px;}
+.mian2 ul li:nth-child(2){border-left:1px solid #ccc;border-right:1px solid #ccc;}
+.mian2 h3{height: 72px;display:flex;flex-direction:row;justify-content: space-between;}
+.mian2 h3 span{display:block;width: 270px;height: 72px;}
+.mian2 h3 span:nth-child(1){border-right:1px solid #ccc;}
+.mian2 h3 span img{width: 100%;}
