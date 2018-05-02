@@ -1,5 +1,5 @@
-.shouyes{display:flex;flex-direction:row;justify-content: space-between;padding-top: 0.08rem;}
-.shouyes div{flex:1;text-align: center;position:relative;}
-.shouyes div p{font-size: 0.346667rem;}
-.shouyes div span{font-size: 0.16rem;position: absolute;left:0.466667rem;top:0.32rem;}
-.shouyes div .zhanghao{position: absolute;left:0.4rem;top:0.32rem;}
+.shouyes{display:flex;flex-direction:row;justify-content: space-between;padding-top: 0.08rem;height:0.72rem;position:fixed;width:100%;bottom:0;background-color: #fff;border-top: 0.013333rem solid #ccc;}
+.shouyes a{flex:1;text-align: center;position:relative;}
+.shouyes a p{font-size: 0.346667rem;}
+.shouyes a span{font-size: 0.16rem;position: absolute;left:0.466667rem;top:0.32rem;}
+.shouyes a .zhanghao{position: absolute;left:0.4rem;top:0.32rem;}
