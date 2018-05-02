@@ -1,21 +1,21 @@
 <template>
     <div class="shouyes">
-        <div>
+        <router-link to="/home">
             <p class="iconfont icon-shouye"></p>
             <span>首页</span>
-        </div>
-        <div>
+        </router-link>
+        <router-link to="/fenlei">
             <p class="iconfont icon-leimupinleifenleileibie"></p>
             <span>分类</span>
-        </div>
-        <div>
+        </router-link>
+        <router-link to="/car">
             <p class="iconfont icon-gouwuche"></p>
             <span class="zhanghao">购物车</span>
-        </div>
-        <div>
+        </router-link>
+        <router-link to="/login">
             <p class="iconfont icon-zhanghao"></p>
             <span>账号</span>
-        </div>
+        </router-link>
     </div>
 </template>
 

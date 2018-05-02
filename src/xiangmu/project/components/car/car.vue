@@ -21,7 +21,7 @@
                     <div>
                         <span class="number_sub" @click="sub(index)">-</span>
                         <input type="number" class="car_number" readonly="readonly" :value="item.num"/>
-                        <span class="number_add" @click="add(index)">+</span>
+                        <span class="number_add" @click="item.num += 1">+</span>
                     </div>
                 </div>
                 <span>￥{{item.price}}</span>
@@ -30,21 +30,24 @@
                 <span>小计：<em>￥{{totalPrice}}</em></span>
             </li>
         </ul>
-        <div class="title">
+        <div class="title bottom_fixed">
             <label for="foot-check" class="input-label" :class="{active: selected_all}" @click="slect_all"></label>
             <h5 style="color:#929292;">全选</h5>
             <span>总计：<em>￥{{totalPrice}}</em></span>
             <p class="btn" @click="btn">{{btn_txt}}</p>
         </div>
-        <div class="test"></div>
+        <bodyComponent class="test"></bodyComponent>
     </div>
 </template>
 
 <script type="text/javascript">
-
+    import bodyComponent from '../home/body/body.vue'; 
     import './car.css';
 
     export default {
+            components:{
+                bodyComponent
+            },
             data () {
                 return {
                     good_list: [
@@ -84,12 +87,11 @@
                     totalNum: 0,
                     selected_all: false,
                     text:"编辑",
-                    btn_txt:"去结算"
+                    btn_txt:"去结算",
+                    arr:[]
                 }
             },
-            mounted: function () {
-                this.getTotal();
-            },
+            
             /*监听数据*/
             watch: {
                 'good_list': {
@@ -152,10 +154,10 @@
                     this.getTotal();
                 },
                 /*加*/
-                add(index) {
+                /*add(index) {
                     this.good_list[index].num ++;
                     this.getTotal();
-                },
+                },*/
                 redact(){
                     if(this.text == "编辑"){
                         this.text="完成";  
@@ -166,9 +168,25 @@
                     }
                 },
                 btn(){
-                    // if(this.btn_txt == "删除"){
-                    //     this.select_one(this.);
-                    // }
+                    if(this.btn_txt == "去结算"){
+                        for(let i = 0; i<this.good_list.length; i++){
+                            let _arr = this.good_list[i];
+                            if(_arr.is_selected){
+                                console.log(_arr);
+                                this.arr.push(_arr);
+                            }
+                        }
+                        console.log(this.arr);
+                    }
+                    if(this.btn_txt == "删除"){
+                        for(let i = 0; i<this.good_list.length; i++){
+                            let _del = this.good_list[i];
+                            if(_del.is_selected){
+                                this.good_list.splice(i,1);
+                            }
+                        }
+                    }
+                    /*this.$router.push({name:'login'});*/
                 }
             }
         }

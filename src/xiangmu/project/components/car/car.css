@@ -26,13 +26,12 @@
     margin-left: 0.426667rem;
     /*width:100%;*/
 }
-.car_main .title,.title{
+.car_main .title{
     padding-left:0.2rem;
     height: 0.8rem;
     position: relative;
     border-bottom: 0.013333rem solid #ccc;
     padding:0;
-
 }
 .title span{
     font-size: 0.213333rem;
@@ -108,6 +107,11 @@
     height:0.72rem;
 }
 .btn{float:right;height:100%;width:1.333333rem;font-size: 0.266667rem;background-color: #FE6700;text-align:center;line-height: 0.8rem;color:#fff;}
+.bottom_fixed{
+    position:fixed;
+    bottom:0.72rem;
+    width:100%;
+    background-color: #fff;
+}
 
-
-.test{height:0.72rem;background-color: orange;}
+/* .test{height:0.72rem;background-color: orange;} */
