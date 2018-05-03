@@ -13,7 +13,7 @@ module.exports = {
     async select(_collection, _condition = {}){
         try{
             let items =  await db.collection(_collection).find(_condition).toArray();
-            return items;
+            return apiReulst(items.length >0, items);
         } catch(error){
             return apiReulst(false, error);
         }

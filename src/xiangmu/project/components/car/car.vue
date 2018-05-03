@@ -16,12 +16,12 @@
                     <label class="input-label" :class="{active: item.is_selected}" @click="select_one(index)"></label>
                 </div>
                 <div class="center">
-                    <div class="img"><img src="" alt="" /></div>
+                    <img :src="item.imgurl" alt=""  class="img"/>
                     <p class="good_name">{{item.title}}</p>
                     <div>
                         <span class="number_sub" @click="sub(index)">-</span>
                         <input type="number" class="car_number" readonly="readonly" :value="item.num"/>
-                        <span class="number_add" @click="item.num += 1">+</span>
+                        <span class="number_add" @click="add(index)">+</span>
                     </div>
                 </div>
                 <span>￥{{item.price}}</span>
@@ -56,30 +56,35 @@
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 6070.00,
+                            imgurl:'carImg/1.jpg',
                             is_selected: false
                         },{
                             id:2,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 4570.00,
+                            imgurl:'./carImg/2.jpg',
                             is_selected: false
                         },{
                             id:3,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 4870.00,
+                            imgurl:'./carImg/3.jpg',
                             is_selected: false
                         },{
                             id:4,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 10568.00,
+                            imgurl:'./carImg/1.jpg',
                             is_selected: false
                         },{
                             id:5,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 10568.00,
+                            imgurl:'./carImg/2.jpg',
                             is_selected: false
                         },
                     ],
@@ -112,7 +117,7 @@
                         let _d = this.good_list[i];
                         if(_d.is_selected){
                             this.totalPrice += _d['price'] * _d['num'];
-                            this.totalNum +=_d['num'];
+                            this.totalNum += _d['num'];
                             good += 1;
                             if(good == this.good_list.length){
                                 this.selected_all = true;
@@ -154,10 +159,10 @@
                     this.getTotal();
                 },
                 /*加*/
-                /*add(index) {
+                add(index) {
                     this.good_list[index].num ++;
                     this.getTotal();
-                },*/
+                },
                 redact(){
                     if(this.text == "编辑"){
                         this.text="完成";  
