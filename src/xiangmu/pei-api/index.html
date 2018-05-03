@@ -51,7 +51,7 @@
       padding: 20px;
     }
     .addbox{
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       background: rgba(111, 109, 110, 0.71);
@@ -76,7 +76,6 @@
       align-items: center;
     }
     .addbox div label{
-      opacity: 1;
       display: -webkit-flex;
       display: -ms-flex;
       display: flex;
@@ -299,14 +298,57 @@
     // });
     let addbox = Vue.component('addbox',{
       template : `<div  class="addbox"><div>
-          <label>id<input type="text" /></label>
-          <label>SubjectName<input type="text" /></label>
-          <label>SujectDesc<input type="text" /></label>
-          <label>PictureUrl	<input type="text" /></label>
-          <label>SetDiscount<input type="text" /></label>
-          <label>OriDiscount<input type="text" /></label>
-          <button>确定</button>
+          <label>Id<input v-model="Id" type="text" /></label>
+          <label>SubjectName<input v-model="SubjectName" type="text" /></label>
+          <label>SujectDesc<input v-model="SujectDesc" type="text" /></label>
+          <label>PictureUrl	<input v-model="PictureUrl" type="text" /></label>
+          <label>SetDiscount<input v-model="SetDiscount" type="text" /></label>
+          <label>OriDiscount<input v-model="OriDiscount" type="text" /></label>
+          <button @click="adddata">确定</button>
       </div></div>`,
+      methods:{
+        adddata(){
+          if(this.Id){
+
+            let formdata = new FormData();
+            let data = {
+              'Id':this.Id,
+              'SubjectName':this.SubjectName,
+              'SujectDescv':this.SujectDescv,
+              'PictureUrl':this.PictureUrl,
+              'SetDiscount':this.SetDiscount,
+              'OriDiscount':this.OriDiscount
+            };
+            formdata.append('Id',this.Id);
+            formdata.append('SubjectName',this.SubjectName);
+            formdata.append('SujectDescv',this.SujectDescv);
+            formdata.append('PictureUrl',this.PictureUrl);
+            formdata.append('SetDiscount',this.SetDiscount);
+            formdata.append('OriDiscount',this.OriDiscount);
+            fetch('http://localhost:88/insertdata',{
+              method:"POST",
+              body:JSON.stringify(data),
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              }
+            });
+            this.$parent.ishowadd = false;
+          }else{
+            alert('Id不能为空');
+          }
+        }
+      },
+      data(){
+        return {
+          Id : '',
+          SubjectName:'',
+          SujectDesc:'',
+          PictureUrl:'',
+          SetDiscount:'',
+          OriDiscount:'',
+        }
+      }
     });
 
     let tablecomponent = {
@@ -446,7 +488,8 @@
           },
           methods:{
             adddata(){
-              console.log(addbox);
+              this.$parent.ishowadd = true;
+              console.log(this.$parent.ishowadd);
             }
           }
         }
