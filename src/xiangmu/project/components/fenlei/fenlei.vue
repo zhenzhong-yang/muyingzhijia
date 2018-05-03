@@ -1,6 +1,6 @@
 <template>
     <div class="lb">
-        <ul class="fl">
+        <ul class="fl_l">
             <li>
                <router-link to="/fenlei1">妈妈专区</router-link> 
             </li>
@@ -32,20 +32,19 @@
                 <router-link to="/fenlei10">收纳外出</router-link>
             </li>
         </ul>
+        <!-- <bd></bd> -->
         <div>
             <router-view></router-view>
         </div>
-        <!-- <bd></bd> -->
     </div>
 </template>
 <script>
-    import shouyes from "../fenlei/fenlei.css"
+    import lb from "../fenlei/fenlei.css"
+    import shouye from "../home/body/body.css"
     // import bd from '../home/body/body.vue'
-    export default {
-        
-        
-        // components: {
-        //     bd
-        // }        
-    }
+    // export default {
+    //     components: {
+    //         bd
+    //     }        
+    // }
 </script>

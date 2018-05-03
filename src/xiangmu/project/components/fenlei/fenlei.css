@@ -1,5 +1,5 @@
 .lb{width:100px;border:1px solid #ccc;}
-.lb .fl{color:#000;font-size:18px;text-align: center;line-height: 57px;background: #F3F3F3;}
-.lb .fl li{width: 93px;height: 57px;}
-.lb .fl li a{display:block;color:#000;width: 100px;height: 57px;}
-.lb .fl li a:hover{background:#fff;border-left:2px solid red;color:red;}
+.lb .fl_l{color:#000;font-size:18px;text-align: center;line-height: 57px;background: #F3F3F3;}
+.lb .fl_l li{width: 93px;display:flex;flex-direction:column;}
+.lb .fl_l li a{display:block;color:#000;width: 100px;text-decoration:none;}
+.lb .fl_l li a:hover{background:#fff;border-left:2px solid red;color:red;}

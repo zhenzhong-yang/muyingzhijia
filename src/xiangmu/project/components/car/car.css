@@ -1,0 +1,113 @@
+.car_header{
+    background-color: #f60;
+    height:0.72rem;
+    display:flex;
+}
+.car_header li{
+    flex:20%;
+    text-align: center;
+    line-height: 0.72rem;
+    font-size: 0.2rem;
+}
+.car_header li:nth-child(2){flex:60%;font-size: 0.3rem;}
+.car_header .redact span{
+    display:inline-block;
+    width:0.88rem;
+    height:0.466667rem;
+    border:0.013333rem solid #fff;
+    border-radius:0.066667rem;
+    color:#fff;
+    margin-top: 0.16rem;
+    line-height: 0.466667rem;
+}
+.car_main .title h5,.title h5{
+    display:inline-block;
+    font-size: 0.24rem;
+    margin-left: 0.426667rem;
+    /*width:100%;*/
+}
+.car_main .title,.title{
+    padding-left:0.2rem;
+    height: 0.8rem;
+    position: relative;
+    border-bottom: 0.013333rem solid #ccc;
+    padding:0;
+
+}
+.title span{
+    font-size: 0.213333rem;
+    margin-left: 0.2rem;
+}
+.input-label.active{background: #F15A24;}
+.input-block{
+    width: 0.4rem;
+    float: left;
+    height: 0.733333rem;
+    line-height: 0.733333rem;
+    position:relative;
+}
+.input-label{
+    position: absolute;
+    width:0.24rem;
+    height:0.24rem;
+    top:0.24rem;
+    left: 0.106667rem;
+    background: #fff;
+    border:0.026667rem solid #ccc;
+    border-radius: 50%;
+    margin-top:0.2rem;
+    
+}
+/*.input-label:after {
+    opacity: 0  ;
+    content: ''  ;
+    position: absolute ; 
+    width: 9px  ;
+    height: 5px  ;
+    background: transparent ; 
+    top: 6px  ;
+    left: 6px  ;
+    border: 2px solid #333 ; 
+    border-top: none  ;
+    border-right: none; 
+}*/
+.car_main{flex:1;overflow-x: hidden;}
+.car_main .img{width:0.933333rem;height:1.066667rem;background-color: orange;float:left;margin-right: 0.106667rem;}
+.car_main li{
+    display:flex;
+    justify-content: space-around;
+    height:1.533333rem;
+    padding:0.333333rem 0.333333rem 0.333333rem 0.2rem;
+    font-size:0.16rem;
+    border-bottom: 0.013333rem solid #ccc;
+}
+.car_main li .center{flex:60%;margin-left: 0.2rem;}
+.car_main .car_number{
+    margin-top: 0.426667rem;
+    border:none;
+    text-align: center;
+    font-size:0.16rem;
+    width:0.666667rem;
+}
+.car_main .number_add,.car_main .number_sub{
+    display:inline-block;
+    border:0.013333rem solid #ccc;
+    border-radius: 50%;
+    width:0.266667rem;
+    height:0.266667rem;
+    text-align: center;
+}
+.car_main .car_footer{padding:0;height:0.72rem;}
+.car_main .car_footer span{
+    display:inline-block;
+    /*float:right;*/
+    margin-right: 0.333333rem;
+    margin-top: 0.2rem;
+    font-size: 0.186667rem;
+    color:#FE6700;
+    height:0.72rem;
+}
+.btn{float:right;height:100%;width:1.333333rem;font-size: 0.266667rem;background-color: #FE6700;text-align:center;line-height: 0.8rem;color:#fff;}
+
+
+.test{height:0.72rem;background-color: orange;}
