@@ -17,10 +17,12 @@ app.all('*', function(req, res, next) {
 });
 
 const getclassdata = require('./class')
+const user = require('./user.js')
 
 module.exports = {
   start(_port){
     getclassdata.reg(app);
+    user.reg(app);
     app.listen(_port);
   }
 }
