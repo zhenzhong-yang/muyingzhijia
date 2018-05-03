@@ -11,6 +11,10 @@
   <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js" charset="utf-8"></script>
   <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
   <style>
+  	.night{
+  		background: #333333;
+  		color: #E9E9E9;
+  	}
     body {
       padding: 20px;
     }
@@ -51,7 +55,7 @@
       padding: 20px;
     }
     .addbox{
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       background: rgba(111, 109, 110, 0.71);
@@ -76,12 +80,17 @@
       align-items: center;
     }
     .addbox div label{
-      opacity: 1;
       display: -webkit-flex;
       display: -ms-flex;
       display: flex;
       justify-content: space-between;
       width: 300px;
+    }
+    .top{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
     }
   </style>
 </head>
@@ -95,115 +104,7 @@
     <addbox v-if="ishowadd"></addbox>
   </div>
   <script type="text/javascript">
-  // let todaySpec = [{
-  //       "Id": 1084,
-  //       "SubjectName": "CHBABY推车 安全出行  欢乐无忧",
-  //       "SujectDesc": "CHBABY推车 安全出行  欢乐无忧",
-  //       "ApplyPlace": "[9]",
-  //       "ApplyLabel": "",
-  //       "PictureUrl": "http://img.boodoll.cn/img/201602/20160214130826_31_chbaby.jpg",
-  //       "SetDiscountTypeId": 1,
-  //       "SetDiscount": "399.00",
-  //       "OriDiscount": "￥399.00起",
-  //       "ReOriDiscount": "",
-  //       "StartTime": "\/Date(1525075693000-0000)\/",
-  //       "EndTime": "\/Date(1528704494000-0000)\/",
-  //       "IsEnable": true,
-  //       "IsDeleted": false,
-  //       "CreateBy": 888,
-  //       "CreateDate": "\/Date(1525075700913-0000)\/",
-  //       "UpdateBy": 888,
-  //       "UpdateDate": "\/Date(1525075701323-0000)\/",
-  //       "Sort": 3136,
-  //       "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=1797"
-  //     },
-  //     {
-  //       "Id": 2846,
-  //       "SubjectName": "雅培菁智6罐送保温杯12罐送豪礼",
-  //       "SujectDesc": "雅培菁智6罐送保温杯12罐送豪礼",
-  //       "ApplyPlace": "[9]",
-  //       "PictureUrl": "http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg",
-  //       "SetDiscountTypeId": 1,
-  //       "SetDiscount": "179",
-  //       "OriDiscount": "￥179起",
-  //       "ReOriDiscount": "",
-  //       "StartTime": "\/Date(1524189801000-0000)\/",
-  //       "EndTime": "\/Date(1525399403000-0000)\/",
-  //       "IsEnable": true,
-  //       "IsDeleted": false,
-  //       "CreateBy": 888,
-  //       "CreateDate": "\/Date(1525067759740-0000)\/",
-  //       "UpdateBy": 888,
-  //       "UpdateDate": "\/Date(1525075682463-0000)\/",
-  //       "Sort": 3135,
-  //       "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=381"
-  //     },
-  //     {
-  //       "Id": 1041,
-  //       "SubjectName": "口罩专场 和细菌拜拜",
-  //       "SujectDesc": "口罩专场 和细菌拜拜 雾霾天也可以放心出门",
-  //       "ApplyPlace": "[9][14]",
-  //       "ApplyLabel": "",
-  //       "PictureUrl": "http://img.boodoll.cn/img/201601/20160121135917_31_kozhao.jpg",
-  //       "SetDiscountTypeId": 1,
-  //       "SetDiscount": "19.9",
-  //       "OriDiscount": "￥19.9起",
-  //       "ReOriDiscount": "",
-  //       "StartTime": "\/Date(1523353705000-0000)\/",
-  //       "EndTime": "\/Date(1526377706000-0000)\/",
-  //       "IsEnable": true,
-  //       "IsDeleted": false,
-  //       "CreateBy": 888,
-  //       "CreateDate": "\/Date(1525067798427-0000)\/",
-  //       "UpdateBy": 888,
-  //       "UpdateDate": "\/Date(1525075682463-0000)\/",
-  //       "Sort": 3134,
-  //       "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=1958"
-  //     },
-  //     {
-  //       "Id": 3218,
-  //       "SubjectName": "爱羽乐新客买一送一",
-  //       "SujectDesc": "爱羽乐新客买一送一",
-  //       "ApplyPlace": "[1][9][12]",
-  //       "PictureUrl": "http://img.muyingzhijia.com/img/201804/20180426095545_10_alula1242.jpg",
-  //       "SetDiscountTypeId": 1,
-  //       "SetDiscount": "88.00",
-  //       "OriDiscount": "￥88.00",
-  //       "ReOriDiscount": "",
-  //       "StartTime": "\/Date(1524672000000-0000)\/",
-  //       "EndTime": "\/Date(1527782399000-0000)\/",
-  //       "IsEnable": true,
-  //       "IsDeleted": false,
-  //       "CreateBy": 888,
-  //       "CreateDate": "\/Date(1524709410037-0000)\/",
-  //       "UpdateBy": 888,
-  //       "UpdateDate": "\/Date(1525075682463-0000)\/",
-  //       "Sort": 3133,
-  //       "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=2086"
-  //     },
-  //     {
-  //       "Id": 1930,
-  //       "SubjectName": "Minimoto小米米宝宝棉品",
-  //       "SujectDesc": "触感轻柔 舒适透气",
-  //       "ApplyPlace": "[9]",
-  //       "ApplyLabel": "",
-  //       "PictureUrl": "http://img.boodoll.cn/img/201608/20160805112829_31_mimi.jpg",
-  //       "SetDiscountTypeId": 1,
-  //       "SetDiscount": "19.00",
-  //       "OriDiscount": "￥19.00起",
-  //       "ReOriDiscount": "",
-  //       "StartTime": "\/Date(1522684800000-0000)\/",
-  //       "EndTime": "\/Date(1527782400000-0000)\/",
-  //       "IsEnable": true,
-  //       "IsDeleted": false,
-  //       "CreateBy": 888,
-  //       "CreateDate": "\/Date(1525017526853-0000)\/",
-  //       "UpdateBy": 888,
-  //       "UpdateDate": "\/Date(1525075682463-0000)\/",
-  //       "Sort": 3132,
-  //       "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=2082"
-  //     }
-  //   ];
+  
     let todaySpec = [];
 
     let todaySell = [{
@@ -294,19 +195,63 @@
       }
     ];
 
-    // fetch('http://localhost:88/todayspecial').then(function(res){
-    //   console.log(res);
-    // });
+    
     let addbox = Vue.component('addbox',{
-      template : `<div  class="addbox"><div>
-          <label>id<input type="text" /></label>
-          <label>SubjectName<input type="text" /></label>
-          <label>SujectDesc<input type="text" /></label>
-          <label>PictureUrl	<input type="text" /></label>
-          <label>SetDiscount<input type="text" /></label>
-          <label>OriDiscount<input type="text" /></label>
-          <button>确定</button>
-      </div></div>`,
+      template : `
+      <div  class="addbox">
+     	 	<div>
+          <label>Id<input v-model="Id" type="text" /></label>
+          <label>SubjectName<input v-model="SubjectName" type="text" /></label>
+          <label>SujectDesc<input v-model="SujectDesc" type="text" /></label>
+          <label>PictureUrl	<input v-model="PictureUrl" type="text" /></label>
+          <label>SetDiscount<input v-model="SetDiscount" type="text" /></label>
+          <label>OriDiscount<input v-model="OriDiscount" type="text" /></label>
+          <button @click="adddata">确定</button>
+      	</div>
+      </div>`,
+      methods:{
+        adddata(){
+          if(this.Id){
+
+            let formdata = new FormData();
+            let data = {
+              'Id':this.Id,
+              'SubjectName':parseInt(this.SubjectName),
+              'SujectDescv':this.SujectDescv,
+              'PictureUrl':this.PictureUrl,
+              'SetDiscount':this.SetDiscount,
+              'OriDiscount':this.OriDiscount
+            };
+            formdata.append('Id',this.Id);
+            formdata.append('SubjectName',this.SubjectName);
+            formdata.append('SujectDescv',this.SujectDescv);
+            formdata.append('PictureUrl',this.PictureUrl);
+            formdata.append('SetDiscount',this.SetDiscount);
+            formdata.append('OriDiscount',this.OriDiscount);
+            fetch('http://localhost:88/insertdata',{
+              method:"POST",
+              body:JSON.stringify(data),
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              }
+            });
+            this.$parent.ishowadd = false;
+          }else{
+            alert('Id不能为空');
+          }
+        }
+      },
+      data(){
+        return {
+          Id : '',
+          SubjectName:'',
+          SujectDesc:'',
+          PictureUrl:'',
+          SetDiscount:'',
+          OriDiscount:'',
+        }
+      }
     });
 
     let tablecomponent = {
@@ -345,14 +290,13 @@
         insert() {},
         deletedata(event) {
           let idx = event.target.getAttribute("idx");
+          console.log(this.dataarr[idx].Id);
           fetch('http://localhost:88/deletedata/'+this.dataarr[idx].Id).then((res)=>{
-            if(res.status == 200 ){
-              console.log(res);
               return res.json();
-            }
           },err=>{
             console.log(err);
           }).then(res=>{
+            console.log(res);
             if(res.status){
               this.dataarr.splice(idx,1)
             }else{
@@ -397,8 +341,33 @@
       components: {
         top: {
           template: `
-          <h1>母婴之家后台管理系统v1.0</h1>
-          `
+          <div class="top">
+            <h1>母婴之家后台管理系统v1.0</h1>
+            <select v-model="itemname" @change="changestatus" name="choosemode">
+              <option  value="night">night</option>
+              <option value="sun" selected >sun</option>
+            </select>
+          </div>`,
+          data(){
+          	return {
+          		itemname:"sun"
+          	}
+          },
+          methods:{
+          	changestatus(){
+//        		console.log('你点击了');
+          		switch(this.itemname){
+          			case 'night':
+          				console.log(this.itemname);
+          				break;
+          			case 'sun':
+          				console.log(this.itemname);
+          				break;
+          			default :
+          				break;
+          		}
+          	}
+          }
         },
         middle: {
           template: `
@@ -446,7 +415,8 @@
           },
           methods:{
             adddata(){
-              console.log(addbox);
+              this.$parent.ishowadd = true;
+              
             }
           }
         }

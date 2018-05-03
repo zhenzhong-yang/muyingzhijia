@@ -7,7 +7,7 @@ module.exports ={
   reg(app){
     app.get('/deletedata/:id',async function(req,res){
       let Id = parseInt(req.params.id);
-
+      console.log(Id);
       let deletedata = await db.deleteOne('todaySpecial',{Id:Id});
       res.send(apiReulst(deletedata.result.n>0,deletedata.result,'哈哈'));
     })
