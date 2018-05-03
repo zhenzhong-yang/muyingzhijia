@@ -23,17 +23,28 @@
     text-align: left;
     /*position:relative;*/
 }
-.reg_main span{
+.reg_main .reg_code{
     display:inline-block;
     width:1.066667rem;
     height:0.533333rem;
     color:#fff;
     line-height:0.533333rem;
     position: absolute;
-    top:2.406667rem;
+    top:3.173333rem;
     right:0.426667rem;
     background-color: #FE7E00;
     border-radius:0.133333rem;
+    font-size: 0.186667rem;
+}
+
+.reg_btn{
+    width: 4.133333rem;
+    height:0.8rem;
+    background-color: #FE7E00;
+    line-height:0.8rem;
+    margin-top: 0.2rem;
+    border-radius: 0.133333rem;
+    color:#fff;
 }
 .reg_footer{text-align: center;margin-top: 0.666667rem;}
 .reg_footer span{

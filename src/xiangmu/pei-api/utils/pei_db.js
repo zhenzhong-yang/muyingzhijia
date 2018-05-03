@@ -4,7 +4,7 @@ const mc = mongodb.MongoClient;
 
 var db = null;
 
-mc.connect('mongodb://10.3.133.82:27017', (error, client) => {
+mc.connect('mongodb://localhost:27017', (error, client) => {
     db = client.db('gz1801');
 });
 
@@ -13,7 +13,7 @@ module.exports = {
     async select(_collection, _condition = {}){
         try{
             let items =  await db.collection(_collection).find(_condition).toArray();
-            return items;
+            return apiReulst(items.length >0, items);
         } catch(error){
             return apiReulst(false, error);
         }

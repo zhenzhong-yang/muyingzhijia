@@ -19,16 +19,24 @@ app.all('*', function(req, res, next) {
 });
 
 const getclassdata = require('./class')
+
+const user = require('./user.js')
+
 const makedatatodb = require('./makedatatodb.js')
 const todaySpec = require('./todaySpecial.js')
 const deletedata = require('./deletedata.js');
+
 
 module.exports = {
   start(_port){
     deletedata.reg(app);
     todaySpec.reg(app);
     getclassdata.reg(app);
+
+    user.reg(app);
+
     makedatatodb.reg(app);
+
     app.listen(_port);
   }
 }

@@ -10,7 +10,7 @@
             <input type="password" id="password" v-model="data.password" placeholder="请输入密码(6-20位数字、字母和符号)"/>
             <p><a href="">忘记密码</a></p>
             <div class="login_main_bottiom">
-                <p class="login_btn">登录</p>
+                <p class="login_btn" @click="login">登录</p>
                 <router-link to="/reg">新用户注册</router-link>
                 <a href="javascript:void(0);" class="ver">手机验证码登录</a>
             </div>
@@ -39,13 +39,14 @@
                     username:'',
                     password:''
                 },
-                show:true,
+                show:false,
                 text:"用户名或密码错误"
             }
         },
         methods:{
             login(){
                 http.post('login', this.data).then((res) =>{
+                    console.log(res)
                     if(res.status){
                         window.localStorage.setItem('token',res.data);
                         this.$router.push({name:'home'});
