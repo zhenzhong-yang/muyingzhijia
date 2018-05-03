@@ -3,7 +3,10 @@ const bodyparser = require('body-parser');
 const app = express();
 const path = require('path');
 
-app.use(bodyparser.urlencoded({extended:false}));
+app.use(bodyparser.urlencoded({extended:true}));
+
+app.use(bodyparser.json());
+
 app.use(express.static(path.join(__dirname+'../../')))
 
 app.all('*', function(req, res, next) {
@@ -22,9 +25,11 @@ const getclassdata = require('./class')
 const makedatatodb = require('./makedatatodb.js')
 const todaySpec = require('./todaySpecial.js')
 const deletedata = require('./deletedata.js');
+const insertdata = require('./insertdata.js');
 
 module.exports = {
   start(_port){
+    insertdata.reg(app);
     deletedata.reg(app);
     todaySpec.reg(app);
     getclassdata.reg(app);

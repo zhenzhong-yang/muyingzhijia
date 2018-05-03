@@ -4,7 +4,7 @@ const mc = mongodb.MongoClient;
 
 var db = null;
 
-mc.connect('mongodb://10.3.133.82:27017', (error, client) => {
+mc.connect('mongodb://localhost:27017', (error, client) => {
     db = client.db('gz1801');
 });
 
