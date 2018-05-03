@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
+const path = require('path');
 
 app.use(bodyparser.urlencoded({extended:false}));
+app.use(express.static(path.join(__dirname+'../../')))
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -17,12 +19,24 @@ app.all('*', function(req, res, next) {
 });
 
 const getclassdata = require('./class')
+
 const user = require('./user.js')
+
+const makedatatodb = require('./makedatatodb.js')
+const todaySpec = require('./todaySpecial.js')
+const deletedata = require('./deletedata.js');
+
 
 module.exports = {
   start(_port){
+    deletedata.reg(app);
+    todaySpec.reg(app);
     getclassdata.reg(app);
+
     user.reg(app);
+
+    makedatatodb.reg(app);
+
     app.listen(_port);
   }
 }
