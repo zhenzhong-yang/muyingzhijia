@@ -32,9 +32,7 @@ module.exports = {
     deletedata.reg(app);
     todaySpec.reg(app);
     getclassdata.reg(app);
-
     user.reg(app);
-
     makedatatodb.reg(app);
 
     app.listen(_port);

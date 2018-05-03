@@ -1,7 +1,7 @@
 <template>
     <div style="display:flex;flex-direction:column;position:relative;height:100%;">
         <ul class="car_header">
-            <li>&lt;</li>
+            <li @click="back">&lt;</li>
             <li>购物车</li>
             <li class="redact" ><span @click="redact">{{text}}</span></li>
         </ul>
@@ -56,35 +56,35 @@
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 6070.00,
-                            imgurl:'carImg/1.jpg',
+                            imgurl:'http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg',
                             is_selected: false
                         },{
                             id:2,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 4570.00,
-                            imgurl:'./carImg/2.jpg',
+                            imgurl:'http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg',
                             is_selected: false
                         },{
                             id:3,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 4870.00,
-                            imgurl:'./carImg/3.jpg',
+                            imgurl:'http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg',
                             is_selected: false
                         },{
                             id:4,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 10568.00,
-                            imgurl:'./carImg/1.jpg',
+                            imgurl:'http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg',
                             is_selected: false
                         },{
                             id:5,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
                             price: 10568.00,
-                            imgurl:'./carImg/2.jpg',
+                            imgurl:'http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg',
                             is_selected: false
                         },
                     ],
@@ -192,7 +192,10 @@
                         }
                     }
                     /*this.$router.push({name:'login'});*/
-                }
+                },
+                back(){
+                    window.history.back();
+                },
             }
         }
 </script>
