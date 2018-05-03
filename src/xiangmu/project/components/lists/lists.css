@@ -1,7 +1,26 @@
 html,body{height:100%;}
 #list{height:100%;display:flex;flex-direction:column;}
-#list .head{height: 0.72rem;background:red;}
-#list .paixu{display:flex;flex-direction:row;justify-content: space-between;font-size: 0.16rem;text-align: center;line-height: 0.586667rem;border-bottom:1px solid #FF6600;}
-#list .paixu li{flex:1;height: 0.586667rem;position:relative;}
+#list .head{height: 1.386667rem;background:#FF6600;position:relative;}
+#list .head .as{display:inline-block;width: 0.773333rem;height: 0.693333rem;text-decoration: none;float: left;}
+#list .head .i1{font-size: 0.32rem;color:#fff;line-height: 0.693333rem;margin-left: 0.106667rem;}
+#list .head .soushuo{float: left;width: 4.066667rem;height: 0.453333rem;margin-top: 0.106667rem;position:relative;color:#fff;}
+#list .head .soushuo input{border:none;width: 100%;height: 100%;background:#FF8C3C;border-radius:5px;padding-left:0.466667rem;font-size: 0.186667rem;}
+input::-webkit-input-placeholder{color:#fff;}
+#list .head .soushuo .i2{display:inline-block;font-size:0.266667rem;color:#fff;line-height: 0.453333rem;padding-left:0.133333rem;position:absolute;left:0;top:3px;}
+
+#list .paixu{display:flex;flex-direction:row;font-size: 0.16rem;text-align: center;border-bottom:1px solid #FF6600;height: 1.173333rem;}
+#list .paixu li{flex:1;height: 0.586667rem;position:relative;line-height: 0.586667rem;}
 #list .paixu li span{color:black;}
 #list .paixu li i{position:absolute;top:0;right:0;}
+#list .paixu .li3 .shang{position:absolute;right:0.28rem;top:1px;font-size: 0.106667rem;}
+#list .paixu .li3 .xia{position:absolute;right:0.28rem;top:1px;font-size: 0.106667rem;}
+#list .paixu .li3 .jiage{display:inline-block;width:100%;height: 100%;}
+#list .shopping{display:flex;flex-direction:column;}
+#list .shopping li{height: 1.413333rem;border-bottom: 1px solid #ccc;margin-left:0.186667rem;position:relative;}
+#list .shopping li .imgs{width: 1.4rem;height: 1.4rem;background:red;}
+#list .shopping li .tp{padding-top: 0.2rem;position:absolute;right:0;top:0;width: 3.413333rem;}
+#list .shopping li .title{font-size: 0.16rem;border-bottom: none;line-height: 0.213333rem;}
+#list .shopping li .price{font-size: 0.186667rem;color:red;position:absolute;top:0.693333rem;left:0;}
+#list .shopping li .pingjia{position:absolute;left:0;bottom:-0.2rem;}
+#list .yuan{position:fixed;right:0.173333rem;bottom:0.64rem;display:none;}
+#list .yuan p{font-size: 0.64rem;}
