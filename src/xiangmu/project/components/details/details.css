@@ -1,0 +1,18 @@
+html,body{height: 100%;}
+#details{height:100%;display:flex;flex-direction:column;background:#F3F3F3;position:relative;}
+#details .tu{height: 4.4rem;background:#fff;padding:0 0.293333rem;margin-bottom:0.226667rem;}
+#details .tu .imgs{width: 100%;height: 100%;}
+
+#details .deta{height:2.746667rem;background:#fff;padding-bottom: 0.72rem;}
+#details .deta .price{height: 0.706667rem;border-bottom: 1px solid #D2D2D2;font-size: 0.266667rem;line-height: 0.706667rem;margin-left: 0.16rem;color:red;}
+#details .deta .name{padding-top:0.186667rem;font-size: 0.213333rem;margin-left: 0.16rem;}
+#details .deta .huan{font-size: 0.213333rem;color:red;margin-top: 0.16rem;margin-left: 0.16rem;}
+#details .deta .jieshao{font-size: 0.186667rem;color:#82737A;margin-top: 0.16rem;margin-left: 0.16rem;}
+#details .muying{background:#d2d2d2;font-size: 0.16rem;text-align: right;height:0.426667rem;padding-right:0.133333rem;line-height: 0.426667rem;margin-bottom: 0.16rem;}
+#details .bd{width: 100%;height: 0.72rem;border-top:1px solid #D2D2D2;position:fixed;left:0;bottom:0;background:#fff;}
+#details .bd .kefu{font-size: 0.293333rem;color:#FF942B;position:absolute;left:0;top:0;line-height: 0.72rem;margin-left: 0.226667rem;margin-right: 0.293333rem;}
+#details .bd .shuru{width: 1.32rem;height: 0.44rem;position:absolute;left:0.8rem;top:0.133333rem;}
+#details .bd .shuru input{width: 0.666667rem;height: 0.44rem;border:1px solid #D2D2D2;position:absolute;left:0.306667rem;top:0;padding-left: 0.266667rem;}
+#details .bd .shuru .jian{display:inline-block;width: 0.346667rem;height: 0.44rem;line-height: 0.44rem;text-align: center;position:absolute;left:-1px;top:0;font-size: 0.106667rem;border:1px solid #D2D2D2;border-right: none;}
+#details .bd .shuru .jia{display:inline-block;width: 0.346667rem;height: 0.44rem;line-height: 0.44rem;text-align: center;position:absolute;right:1px;top:0;font-size: 0.106667rem;border:1px solid #D2D2D2;border-left: none;}
+#details .bd .car{display:inline-block;width: 2.533333rem;height: 0.493333rem;position:absolute;right:0;top:0;background:#FF6600;color:#fff;font-size: 0.16rem;text-align: center;line-height: 0.493333rem;margin-right: 0.106667rem;margin-top: 0.106667rem;border-radius: 0.066667rem;}

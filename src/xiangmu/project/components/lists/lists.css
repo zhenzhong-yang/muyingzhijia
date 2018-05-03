@@ -1,7 +1,7 @@
 html,body{height:100%;}
 #list{height:100%;display:flex;flex-direction:column;}
-#list .paixu{display:flex;flex-direction:row;font-size: 0.16rem;text-align: center;border-bottom:1px solid #FF6600;height: 1.173333rem;}
-#list .paixu li{flex:1;height: 0.586667rem;position:relative;line-height: 0.586667rem;}
+#list .paixu{font-size: 0.16rem;text-align: center;border-bottom:1px solid #FF6600;height: 0.586667rem;}
+#list .paixu li{float:left;width: 25%;height: 0.586667rem;position:relative;line-height: 0.586667rem;}
 #list .paixu li span{color:black;}
 #list .paixu li i{position:absolute;top:0;right:0;}
 #list .paixu .li3 .shang{position:absolute;right:0.28rem;top:1px;font-size: 0.106667rem;}
@@ -9,8 +9,8 @@ html,body{height:100%;}
 #list .paixu .li3 .jiage{display:inline-block;width:100%;height: 100%;}
 #list .shopping{display:flex;flex-direction:column;}
 #list .shopping li{height: 1.413333rem;border-bottom: 1px solid #ccc;margin-left:0.186667rem;position:relative;}
-#list .shopping li .imgs{width: 1.4rem;height: 1.4rem;background:red;}
+#list .shopping li .imgs{width: 1.4rem;height: 1.4rem;}
 #list .shopping li .tp{padding-top: 0.2rem;position:absolute;right:0;top:0;width: 3.413333rem;}
 #list .shopping li .title{font-size: 0.16rem;border-bottom: none;line-height: 0.213333rem;color:black;}
 #list .shopping li .price{font-size: 0.186667rem;color:red;position:absolute;top:0.693333rem;left:0;}
-#list .shopping li .pingjia{position:absolute;left:0;bottom:-0.613333rem;}
+#list .shopping li .pingjia{position:absolute;left:0;bottom:-0.853333rem;}

@@ -8,18 +8,16 @@
             <li><span>筛选</span></li>
         </ul>
         <ul class="shopping">
-            <router-link to="/details">
-                <li v-for="(item,index) in good_list">
-                    <div class="imgs">
-                        
-                    </div>
-                    <div class="tp">
-                        <p class="title">{{item.title}}</p>
-                        <p class="price">￥{{item.price}}.00</p>
-                        <img src="../img/pingjia.png" class="pingjia"/>
-                    </div>
-                </li>
-            </router-link>
+            <li v-for="(item,index) in dataset">
+                <router-link :to="{name:'details',query:{id:item._id,price:item.SetDiscount,img:item.PictureUrl,name:item.SubjectName,jieshao:item.SujectDesc}}">
+                <img :src="item.PictureUrl" class="imgs"/>
+                <div class="tp">
+                    <p class="title">{{item.SubjectName}}</p>
+                    <p class="price">￥{{item.SetDiscount}}</p>
+                    <img src="../img/pingjia.png" class="pingjia"/>
+                </div>
+                </router-link>
+            </li>
         </ul>
         <back></back>
     </div>
@@ -29,75 +27,18 @@
     import './lists.css'
     import hd from "../common/common-head.vue"
     import back from "../common/common-back.vue"
+    import http from '../../utils/httpclient'
     export default {
         data(){
             return {
-                good_list:[
-                    {   
-                        id:1,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 6070.00,
-                    },{
-                        id:2,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 4570.00,
-                    },{
-                        id:3,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 4870.00,
-                    },{
-                        id:4,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 10568.00,
-                    },{
-                        id:5,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 10568.00,
-                    },{   
-                        id:6,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 6070.00,
-                    },{
-                        id:7,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 4570.00,
-                    },{
-                        id:8,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 4870.00,
-                    },{
-                        id:9,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 10568.00,
-                    },{
-                        id:10,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 10568.00,
-                    },
-                    {
-                        id:11,
-                        title: '康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml康贝标准口PP奶瓶240ml',
-                        qty: 2,
-                        price: 10568.00,
-                    },
-                ],
+                dataset:[],
                 n:0,
                 show:true
             }
         },
         methods:{
             list(){
-                let lis = this.good_list;
+                let lis = this.dataset;
                 function paixu(li){
                     return function(a,b){
                         let val1 = a[li];
@@ -108,9 +49,9 @@
                 this.n++;
                 console.log(this.n)
                 if(this.n%2 != 0){
-                    console.log(lis.sort(paixu("price")));
+                    console.log(lis.sort(paixu("SetDiscount")));
                 }else{
-                    console.log(lis.sort(paixu("price")).reverse())
+                    console.log(lis.sort(paixu("SetDiscount")).reverse())
                 } 
             },
             
@@ -118,6 +59,12 @@
         components: {
             hd,
             back
+        },
+        mounted(){
+            http.get("/todayspecial").then((res) => {
+                this.dataset = res.data;
+                console.log(this.dataset)
+            })
         }
     }
     jQuery(function($){
