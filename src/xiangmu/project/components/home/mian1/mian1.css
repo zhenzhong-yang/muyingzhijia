@@ -1,0 +1,6 @@
+.mian1{display:flex;flex-direction:row;justify-content: space-between;padding-top: 0.08rem;display:flex;flex-direction:column;}
+.mian1 h2{width: 100%;font-size:16px;}
+.mian1 h2 span{display:block;border:1px solid red;width: 30px;height: 20px;font-size:14px;line-height:20px;margin-left:10px;margin-right:20px;float:left;border-radius:20%;}
+.mian1 ul{display:flex;justify-content:space-around;margin-top:10px;padding-bottom: 20px;}
+.mian1 ul li{font-size:20px;}
+.mian1 ul li p{display:block;font-size:30px;margin-left:5px;}
