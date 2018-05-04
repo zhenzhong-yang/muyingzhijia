@@ -29,9 +29,12 @@ const makedatatodb = require('./makedatatodb.js')
 const todaySpec = require('./todaySpecial.js')
 const deletedata = require('./deletedata.js');
 const insertdata = require('./insertdata.js');
+
 const insertcardata = require('./insertcardata.js');
 const deletecardata = require('./deletecar.js');
 const cardata = require('./cardata.js');
+
+
 
 
 module.exports = {
@@ -43,10 +46,10 @@ module.exports = {
     deletedata.reg(app);
     todaySpec.reg(app);
     getclassdata.reg(app);
-
     user.reg(app);
-
     makedatatodb.reg(app);
+    cardata.reg(app);
+    deletecar.reg(app);
 
     app.listen(_port);
   }
