@@ -210,11 +210,11 @@
             mounted(){
                 http.get("cardata").then((res) => {
                     console.log(res);
-                    if(res.data.data.status == false){
+                    if(res.data.status == false){
                         console.log(666);
                         return [];
                     }else{
-                        this.good_list = res.data.data.data;
+                        this.good_list = res.data.data;
                         console.log(this.good_list);
                     }
 

@@ -6,6 +6,22 @@ const db = require('../utils/pei_db.js');
 
 const apiResult = require('../utils/apiResult.js');
 
+/*验证token*/
+const filter = (req, res, next) => {
+    let token = req.headers['auth'];
+    if(!token){
+        res.send(apiResult(false, {}, 'unauth'));
+    } else {
+        jwt.verify(token, '123456', (error, result) => {
+            if(error){
+                res.send(apiResult(false, error, 'unauth'))
+            } else {
+                next();
+            }
+        })
+    }
+}
+
 
 /*导出user.js*/
 module.exports = {
@@ -21,7 +37,7 @@ module.exports = {
             if(result.status){
                 console.log(result);
                 let token = jwt.sign({username},'123456',{expiresIn:60});
-                let ar = apiResult(result.status,token);
+                let ar = apiResult(result.status,token,result.data);
                 res.send(ar);
             }else{
                 res.send(result);
@@ -50,5 +66,14 @@ module.exports = {
                 res.send(result);
             }
         });
+
+        app.get('/user', filter, async (req, res) => {
+            let result = await db.select('user');
+            res.send(result);
+        });
+
+        app.post('/getStatus', filter, async (req,res) => {
+            res.send(apiResult(true));
+        })
     }
 }

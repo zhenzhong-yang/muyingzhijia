@@ -49,6 +49,8 @@
                     console.log(res)
                     if(res.status){
                         window.localStorage.setItem('token',res.data);
+                        console.log(res.message[0].username);
+                        window.localStorage.setItem('username',res.message[0].username);
                         this.$router.push({name:'my'});
                         console.log(this)
                     }else{
