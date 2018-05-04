@@ -1,0 +1,8 @@
+.head{height: 0.693333rem;background:#FF6600;position:relative;}
+.head .as{display:inline-block;width: 0.773333rem;height: 0.693333rem;text-decoration: none;float: left;}
+.head .i1{font-size: 0.32rem;color:#fff;line-height: 0.693333rem;margin-left: 0.106667rem;}
+.head .soushuo{float: left;width: 4.066667rem;height: 0.453333rem;margin-top: 0.106667rem;position:relative;color:#fff;}
+.head .soushuo input{border:none;width: 100%;height: 100%;background:#FF8C3C;border-radius:5px;padding-left:0.466667rem;font-size: 0.186667rem;position:absolute;left:0;top:0;}
+input::-webkit-input-placeholder{color:#fff;}
+.head .soushuo .i2{display:inline-block;font-size:0.266667rem;color:#fff;line-height: 0.453333rem;padding-left:0.133333rem;position:absolute;left:0;top:0;}
+.fixed{position:fixed;top:0;left:0;right:0;height:0.693333rem;z-index: 9999;}
