@@ -17,10 +17,14 @@
             <span class="zhanghao">购物车</span>
         </router-link>
 
+        <router-link to="/my">
+
+
         <router-link to="/login">
             <p class="iconfont icon-zhanghao"></p>
 
         <router-link :to="luyou">
+
             <p class="iconfont icon-zhanghao"  @click="token"></p>
 
             <span>账号</span>
@@ -32,20 +36,11 @@
     import shouyes from "./body.css";
     import http from '../../../../pei-api/utils/httpclient.js';
     export default {
-        data(){
-            return {
-                luyou:''
-            }
-        },
         methods:{
             token(){
-                if(window.localStorage.getItem('token')){
-                    // this.$router.push({name:'car'});
-                    this.luyou = 'my'
-                } else{
-                    // this.$router.push({name:'login'});console.log(666);
-                    this.luyou = 'login'
-                }
+                http.get('user').then((res) => {
+                    console.log(res);
+                })
             }
         }
     }
