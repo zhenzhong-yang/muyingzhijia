@@ -1,6 +1,10 @@
 <template>
     <div class="shouyes">
+
+        <router-link to="/home">
+
         <router-link to="/">
+
             <p class="iconfont icon-shouye"></p>
             <span>首页</span>
         </router-link>
@@ -12,8 +16,17 @@
             <p class="iconfont icon-gouwuche"></p>
             <span class="zhanghao">购物车</span>
         </router-link>
+
         <router-link to="/my">
+
+
+        <router-link to="/login">
+            <p class="iconfont icon-zhanghao"></p>
+
+        <router-link :to="luyou">
+
             <p class="iconfont icon-zhanghao"  @click="token"></p>
+
             <span>账号</span>
         </router-link>
     </div>

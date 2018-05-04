@@ -1,0 +1,27 @@
+.fl1_l{position: relative;left:100px;top:0px;overflow:hidden;}
+.fenlei_r{position: absolute;left:100px;top:0px;}
+.fenlei_r h2{font-size:12px;margin-left:15px;margin-top: 22px;}
+.fenlei_r h2 span{display:block;float:left;height: 16px;margin-right:5px;}
+.fenlei_r .xinpin{float:left;margin-left:29px;margin-top:19px;}
+.fenlei_r .xinpin:nth-child(3){margin-left:7px;margin-right: -15px;}
+.fenlei_r .xinpin:nth-child(3) li img{margin-left: 10px;}
+.fenlei_r .xinpin:nth-child(4) li img{margin-left: 10px;}
+.fenlei_r .xinpin li{}
+.fenlei_r .xinpin li p:nth-child(1) img{width: 50px;height: 45px;margin-bottom:10px;}
+.fenlei_r .xinpin li p:nth-child(2){font-size:12px;}
+
+
+.fenlei_r h3{font-size:12px;margin-left:15px;position: absolute;left:0px;top:150px;}
+.fenlei_r .sz1{font-size:12px;margin-left:15px;position: absolute;left:0px;top:480px;}
+.fenlei_r h3 span{display:block;float:left;height: 16px;margin-right:5px;}
+.fenlei_r .shizhuang {float:left;margin-left:29px;margin-top:60px;display:flex;justify-content:space-between;}
+.fenlei_r .shizhuang:nth-child(3){margin-left:21px;}
+.fenlei_r .shizhuang:nth-child(3) li img{margin-left: 10px;}
+.fenlei_r .shizhuang:nth-child(6) li{margin-right: 15px;}
+.fenlei_r .shizhuang:nth-child(7) li{margin-top: -35px;}
+.fenlei_r .shizhuang:nth-child(8) li{margin-top: -35px;}
+.fenlei_r .shizhuang:nth-child(10) li{margin-left:15px;}
+.fenlei_r .shizhuang  li{float:left;margin-left:3px;}
+.fenlei_r .shizhuang  li p:nth-child(1) img{width: 50px;height: 45px;margin-bottom:10px;}
+.fenlei_r .shizhuang  li p:nth-child(2){font-size:12px;}
+

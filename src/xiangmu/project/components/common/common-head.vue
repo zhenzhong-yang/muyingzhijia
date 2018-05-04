@@ -17,18 +17,21 @@
             back(){
                 window.history.back();
             }
+        },
+        mounted(){
+            jQuery(function($){
+                $(window).scroll(function(){
+                    var scrollTop = window.scrollY;
+
+                    if(scrollTop >= 200){
+                        console.log(666)
+                        $(".head").addClass("fixed");
+                    }else{
+                        $(".head").removeClass("fixed");
+                    }
+                });
+            })
         }
     }
-    jQuery(function($){
-        $(window).scroll(function(){
-            var scrollTop = window.scrollY;
-
-            if(scrollTop >= 200){
-                console.log(666)
-                $(".head").addClass("fixed");
-            }else{
-                $(".head").removeClass("fixed");
-            }
-        });
-    })
+    
 </script>
