@@ -13,6 +13,6 @@ html,body{height: 100%;}
 #details .bd .kefu{font-size: 0.293333rem;color:#FF942B;position:absolute;left:0;top:0;line-height: 0.72rem;margin-left: 0.226667rem;margin-right: 0.293333rem;}
 #details .bd .shuru{width: 1.32rem;height: 0.44rem;position:absolute;left:0.8rem;top:0.133333rem;}
 #details .bd .shuru input{width: 0.666667rem;height: 0.44rem;border:1px solid #D2D2D2;position:absolute;left:0.306667rem;top:0;padding-left: 0.266667rem;}
-#details .bd .shuru .jian{display:inline-block;width: 0.346667rem;height: 0.44rem;line-height: 0.44rem;text-align: center;position:absolute;left:-1px;top:0;font-size: 0.106667rem;border:1px solid #D2D2D2;border-right: none;}
-#details .bd .shuru .jia{display:inline-block;width: 0.346667rem;height: 0.44rem;line-height: 0.44rem;text-align: center;position:absolute;right:1px;top:0;font-size: 0.106667rem;border:1px solid #D2D2D2;border-left: none;}
+#details .bd .shuru .jian{display:inline-block;width: 0.346667rem;height: 0.44rem;line-height: 0.413333rem;text-align: center;position:absolute;left:-1px;top:0;font-size: 0.16rem;border:1px solid #D2D2D2;border-right: none;}
+#details .bd .shuru .jia{display:inline-block;width: 0.346667rem;height: 0.44rem;line-height: 0.413333rem;text-align: center;position:absolute;right:0;top:0;font-size: 0.16rem;border:1px solid #D2D2D2;border-left: none;}
 #details .bd .car{display:inline-block;width: 2.533333rem;height: 0.493333rem;position:absolute;right:0;top:0;background:#FF6600;color:#fff;font-size: 0.16rem;text-align: center;line-height: 0.493333rem;margin-right: 0.106667rem;margin-top: 0.106667rem;border-radius: 0.066667rem;}

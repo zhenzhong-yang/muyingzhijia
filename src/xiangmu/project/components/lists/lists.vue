@@ -62,15 +62,16 @@
         },
         mounted(){
             http.get("/todayspecial").then((res) => {
-                this.dataset = res.data;
+                this.dataset = res.data.data;
                 console.log(this.dataset)
+            })
+            jQuery(function($){
+                $(".paixu").on("click","li",function(){
+                    $(this).css({borderBottom:"3px solid #FF6600"}).siblings("li").css({borderBottom:"none"})
+                });      
             })
         }
     }
-    jQuery(function($){
-        $(".paixu").on("click","li",function(){
-            $(this).css({borderBottom:"3px solid #FF6600"}).siblings("li").css({borderBottom:"none"})
-        });      
-    })
+    
     
 </script>

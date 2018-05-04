@@ -19,7 +19,7 @@
             <i class="iconfont icon-kefu kefu"></i>
             <div class="shuru">
                 <i class="jian">-</i>
-                <input type="text" value="1"/>
+                <input type="text" value="1" calss="inp"/>
                 <i class="jia">+</i>
             </div>
             <span class="car">加入购物车</span>
@@ -36,6 +36,53 @@
         components: {
             hd,
             back
+        },
+        mounted(){
+            jQuery(function($){
+                $(".jia").on("click",function(){
+                    $(this).prev()[0].value++;
+                    $(this).css({background:"#d2d2d2"}).siblings(".jian").css({background:"#fff"})
+                })
+                $(".jian").on("click",function(){
+                    $(this).next()[0].value--;
+                    if($(this).next()[0].value<1){
+                        $(this).next()[0].value = 1
+                    }
+                    $(this).css({background:"#d2d2d2"}).siblings(".jia").css({background:"#fff"})
+                })
+                $(".inp").on("input",function(){
+                    $(this)[0].value
+                })
+                $(".car").on("click",function(){
+                    let data = {
+                        username:this.username,
+                        Id:this.Id,
+                        SubjectName:parseInt(this.SubjectName),
+                        SujectDescv:this.SujectDescv,
+                        PictureUrl:this.PictureUrl,
+                        SetDiscount:this.SetDiscount,
+                        OriDiscount:this.OriDiscount
+                    }
+                    fetch('http://localhost:88/insertcardata',{
+                        method:"POST",
+                        body:JSON.stringify(data),
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        }
+                    });
+                    // http.post({
+                    //     url:"insertcardata",
+                    //     data:{username:$route.query.name,Id:$route.query.id},
+                    //     cb:function(res){
+                    //         if(res.status){
+                    //             window.location.href = "car.vue"
+                    //         }
+                    //     }
+                    // })
+                })
+            })
         }
     }
+    
 </script>
