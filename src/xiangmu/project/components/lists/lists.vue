@@ -9,7 +9,7 @@
         </ul>
         <ul class="shopping">
             <li v-for="(item,index) in dataset">
-                <router-link :to="{name:'details',query:{id:item._id,price:item.SetDiscount,img:item.PictureUrl,name:item.SubjectName,jieshao:item.SujectDesc}}">
+                <router-link :to="{name:'details',query:{id:item.Id,price:item.SetDiscount,img:item.PictureUrl,name:item.SubjectName,jieshao:item.SujectDesc}}">
                 <img :src="item.PictureUrl" class="imgs"/>
                 <div class="tp">
                     <p class="title">{{item.SubjectName}}</p>
@@ -64,7 +64,7 @@
             http.get("/todayspecial").then((res) => {
                 this.dataset = res.data.data;
                 console.log(this.dataset)
-            })
+            });
             jQuery(function($){
                 $(".paixu").on("click","li",function(){
                     $(this).css({borderBottom:"3px solid #FF6600"}).siblings("li").css({borderBottom:"none"})

@@ -53,16 +53,23 @@
                 $(".inp").on("input",function(){
                     $(this)[0].value
                 })
+                var params = decodeURI(location.hash.slice(10));
+                console.log(params);
+                var  goods = {}
+                params = params.split('&');
+                params.forEach(function(item){
+                    var arr = item.split('=');
+                    goods[arr[0]] = arr[1];
+                });
+                console.log(goods);
                 $(".car").on("click",function(){
                     let data = {
-                        username:this.username,
-                        Id:this.Id,
-                        SubjectName:parseInt(this.SubjectName),
-                        SujectDescv:this.SujectDescv,
-                        PictureUrl:this.PictureUrl,
-                        SetDiscount:this.SetDiscount,
-                        OriDiscount:this.OriDiscount
-                    }
+                        Id:goods.id,
+                        SubjectName:goods.name,
+                        PictureUrl:goods.img,
+                        SetDiscount:goods.price,
+                        qty:$(this).prev().children()[1].value
+                    };
                     fetch('http://localhost:88/insertcardata',{
                         method:"POST",
                         body:JSON.stringify(data),

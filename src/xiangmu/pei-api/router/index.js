@@ -49,7 +49,7 @@ module.exports = {
     user.reg(app);
     makedatatodb.reg(app);
     cardata.reg(app);
-    deletecar.reg(app);
+    // deletecar.reg(app);
 
     app.listen(_port);
   }
