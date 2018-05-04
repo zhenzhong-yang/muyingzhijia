@@ -35,6 +35,8 @@ const deletecardata = require('./deletecar.js');
 const cardata = require('./cardata.js');
 
 
+
+
 module.exports = {
   start(_port){
     insertcardata.reg(app);
@@ -44,10 +46,10 @@ module.exports = {
     deletedata.reg(app);
     todaySpec.reg(app);
     getclassdata.reg(app);
-
     user.reg(app);
-
     makedatatodb.reg(app);
+    cardata.reg(app);
+    deletecar.reg(app);
 
     app.listen(_port);
   }
