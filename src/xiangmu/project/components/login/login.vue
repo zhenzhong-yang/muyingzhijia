@@ -65,6 +65,9 @@
             back(){
                 window.history.back();
             },
+            mounted(){
+                window.localStorage.removeItem('username');
+            }
         },
     }
 </script>

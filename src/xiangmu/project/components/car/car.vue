@@ -94,6 +94,7 @@
                     selected_all: false,
                     text:"编辑",
                     btn_txt:"去结算",
+                    username:'',
                     arr:[]
                 }
             },
@@ -185,6 +186,7 @@
                         console.log(this.arr);
                     }
                     if(this.btn_txt == "删除"){
+                        console.log(this.username);
                         for(let i = 0; i<this.good_list.length; i++){
                             let _del = this.good_list[i];
                             if(_del.is_selected){
@@ -202,13 +204,18 @@
                     window.history.back();
                 },
                 delGoods(goodsid){
-                    http.get("deletecardata/"+goodsid).then((res) => {
+
+                    http.get("deletecardata/"+goodsid+this.username).then((res) => {
                         console.log(res);
                     })
                 }
             },
             mounted(){
-                http.get("cardata").then((res) => {
+                
+                let username = window.localStorage.getItem('username');
+                this.username = username;
+                console.log(username);
+                http.get("cardata/"+username).then((res) => {
                     console.log(res);
                     if(res.data.status == false){
                         console.log(666);

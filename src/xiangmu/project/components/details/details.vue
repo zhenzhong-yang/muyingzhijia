@@ -69,8 +69,8 @@
                         PictureUrl:goods.img,
                         SetDiscount:goods.price,
                         qty:$(this).prev().children()[1].value
-                    };
-                    fetch('http://localhost:88/insertcardata',{
+                    };console.log(666)
+                    fetch('http://10.3.133.107:88/insertcardata',{
                         method:"POST",
                         body:JSON.stringify(data),
                         headers: {

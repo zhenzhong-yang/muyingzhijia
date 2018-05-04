@@ -1,7 +1,7 @@
 <template>
     <div class="shouyes">
 
-        <router-link to="/home">
+        <!-- <router-link to="/home"> -->
 
         <router-link to="/">
 
@@ -18,15 +18,7 @@
         </router-link>
 
         <router-link to="/my">
-
-
-        <router-link to="/login">
             <p class="iconfont icon-zhanghao"></p>
-
-        <router-link :to="luyou">
-
-            <p class="iconfont icon-zhanghao"  @click="token"></p>
-
             <span>账号</span>
         </router-link>
     </div>

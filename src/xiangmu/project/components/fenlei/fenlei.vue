@@ -39,24 +39,11 @@
         </div>
     </div>
 </template>
-<script>
-    import lb from "../fenlei/fenlei.css"
-    import shouye from "../home/body/body.css"
-    // import bd from '../home/body/body.vue'
-    // export default {
-    //     components: {
-    //         bd
-    //     }        
-    // }
-
-    <div>
-        <h1>fenlei</h1>
-        <bodyComponent></bodyComponent>
-    </div>
-</template>
 
 <script type="text/javascript">
     import bodyComponent from '../home/body/body.vue';
+    import lb from "../fenlei/fenlei.css"
+    import shouye from "../home/body/body.css"
     export default{
         components:{
             bodyComponent

@@ -36,7 +36,7 @@ module.exports = {
             
             if(result.status){
                 console.log(result);
-                let token = jwt.sign({username},'123456',{expiresIn:60});
+                let token = jwt.sign({username},'123456',{expiresIn:60 * 5});
                 let ar = apiResult(result.status,token,result.data);
                 res.send(ar);
             }else{

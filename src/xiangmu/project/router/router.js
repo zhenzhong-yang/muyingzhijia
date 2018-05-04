@@ -3,29 +3,29 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import homeComponent from '../components/home/home.vue'
+// 
 
-import listsComponent from '../components/lists/lists.vue'
+// 
 
-import detailsComponent from "../components/details/details.vue"
+// import detailsComponent from "../components/details/details.vue"
 
-/*购物车组件*/
-import carComponent from '../components/car/car.vue';
-/*登录组件*/
+// /*购物车组件*/
+// import carComponent from '../components/car/car.vue';
+// /*登录组件*/
 
-import loginComponent from '../components/login/login.vue'
-import bw from '../components/fenlei/fenlei.vue'
-import bw1 from '../components/fenlei/fenlei1/fenlei1.vue'
-import bw2 from '../components/fenlei/fenlei2/fenlei2.vue'
-import bw3 from '../components/fenlei/fenlei3/fenlei3.vue'
-import bw4 from '../components/fenlei/fenlei4/fenlei4.vue'
-import bw5 from '../components/fenlei/fenlei5/fenlei5.vue'
-import bw6 from '../components/fenlei/fenlei6/fenlei6.vue'
-import bw7 from '../components/fenlei/fenlei7/fenlei7.vue'
-import bw8 from '../components/fenlei/fenlei8/fenlei8.vue'
-import bw9 from '../components/fenlei/fenlei9/fenlei9.vue'
-import bw10 from '../components/fenlei/fenlei10/fenlei10.vue'
-const router = new VueRouter({
+// import loginComponent from '../components/login/login.vue'
+// import bw from '../components/fenlei/fenlei.vue'
+// import bw1 from '../components/fenlei/fenlei1/fenlei1.vue'
+// import bw2 from '../components/fenlei/fenlei2/fenlei2.vue'
+// import bw3 from '../components/fenlei/fenlei3/fenlei3.vue'
+// import bw4 from '../components/fenlei/fenlei4/fenlei4.vue'
+// import bw5 from '../components/fenlei/fenlei5/fenlei5.vue'
+// import bw6 from '../components/fenlei/fenlei6/fenlei6.vue'
+// import bw7 from '../components/fenlei/fenlei7/fenlei7.vue'
+// import bw8 from '../components/fenlei/fenlei8/fenlei8.vue'
+// import bw9 from '../components/fenlei/fenlei9/fenlei9.vue'
+// import bw10 from '../components/fenlei/fenlei10/fenlei10.vue'
+/*const router = new VueRouter({
     routes: [
 
         {path: '/', component: homeComponent, name: 'home'},
@@ -45,8 +45,16 @@ const router = new VueRouter({
             {path: '/fenlei8', component: bw8, name: 'fenlei8'},
             {path: '/fenlei9', component: bw9, name: 'fenlei9'},
             {path: '/fenlei10', component: bw10, name: 'fenlei10'},
-        ]}
+        ]}*/
 
+import homeComponent from '../components/home/home.vue'
+
+import listsComponent from '../components/lists/lists.vue'
+
+import detailsComponent from "../components/details/details.vue"
+
+/*购物车组件*/
+import carComponent from '../components/car/car.vue';
 
 import loginComponent from '../components/login/login.vue';
 /*注册组件*/
