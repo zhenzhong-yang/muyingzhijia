@@ -17,11 +17,12 @@ import loginComponent from '../components/login/login.vue';
 import regComponent from '../components/reg/reg.vue';
 /*分类组件*/
 import fenleiComponent from '../components/fenlei/fenlei.vue';
-
+/*个人中心*/
+import myComponent from '../components/my/my.vue';
 
 const router = new VueRouter({
     routes: [
-        {path: '/home', component: homeComponent, name: 'home'},
+        {path: '/', component: homeComponent, name: 'home'},
 
         {path: '/lists', component: listsComponent, name: 'lists'},
 
@@ -30,7 +31,8 @@ const router = new VueRouter({
         {path: '/car', component: carComponent, name: 'car'},
         {path: '/login', component: loginComponent, name: 'login'},
         {path: '/reg', component:regComponent, name: 'reg'},
-        {path: '/fenlei', component:fenleiComponent, name: 'fenlei'}
+        {path: '/fenlei', component:fenleiComponent, name: 'fenlei'},
+        {path: '/my', component:myComponent, name: 'my'}
     ]
 })
 
