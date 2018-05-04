@@ -16,8 +16,8 @@
                     <label class="input-label" :class="{active: item.is_selected}" @click="select_one(index)"></label>
                 </div>
                 <div class="center">
-                    <img :src="item.imgurl" alt=""  class="img"/>
-                    <p class="good_name">{{item.title}}</p>
+                    <img :src="item.img" alt=""  class="img"/>
+                    <p class="good_name">{{item.goodsname}}</p>
                     <div>
                         <span class="number_sub" @click="sub(index)">-</span>
                         <input type="number" class="car_number" readonly="readonly" :value="item.num"/>
@@ -43,6 +43,7 @@
 <script type="text/javascript">
     import bodyComponent from '../home/body/body.vue'; 
     import './car.css';
+    import http from '../../../pei-api/utils/httpclient.js';
 
     export default {
             components:{
@@ -51,7 +52,7 @@
             data () {
                 return {
                     good_list: [
-                        {   
+                        /*{   
                             id:1,
                             title: '康贝标准口PP奶瓶240ml',
                             num: 2,
@@ -86,7 +87,7 @@
                             price: 10568.00,
                             imgurl:'http://img.muyingzhijia.com/img/201802/20180208113122_10_yp.jpg',
                             is_selected: false
-                        },
+                        },*/
                     ],
                     totalPrice: 0,
                     totalNum: 0,
@@ -187,7 +188,11 @@
                         for(let i = 0; i<this.good_list.length; i++){
                             let _del = this.good_list[i];
                             if(_del.is_selected){
+                                console.log(_del.goodsid);
+
+                                this.delGoods(_del.goodsid);
                                 this.good_list.splice(i,1);
+                                console.log(typeof _del.goodsid)
                             }
                         }
                     }
@@ -196,6 +201,25 @@
                 back(){
                     window.history.back();
                 },
-            }
+                delGoods(goodsid){
+                    http.get("deletecardata/"+goodsid).then((res) => {
+                        console.log(res);
+                    })
+                }
+            },
+            mounted(){
+                http.get("cardata").then((res) => {
+                    console.log(res);
+                    if(res.data.data.status == false){
+                        console.log(666);
+                        return [];
+                    }else{
+                        this.good_list = res.data.data.data;
+                        console.log(this.good_list);
+                    }
+
+                })
+            },
+
         }
 </script>
