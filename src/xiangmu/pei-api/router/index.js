@@ -29,11 +29,19 @@ const makedatatodb = require('./makedatatodb.js')
 const todaySpec = require('./todaySpecial.js')
 const deletedata = require('./deletedata.js');
 const insertdata = require('./insertdata.js');
+
+const insertcardata = require('./insertcardata.js');
+const deletecardata = require('./deletecar.js');
 const cardata = require('./cardata.js');
-const deletecar = require('./deletecar.js');
+
+
+
 
 module.exports = {
   start(_port){
+    insertcardata.reg(app);
+    deletecardata.reg(app);
+    cardata.reg(app);
     insertdata.reg(app);
     deletedata.reg(app);
     todaySpec.reg(app);
